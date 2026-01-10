@@ -22,25 +22,25 @@ Carton is a full-stack journaling application designed with a unique "Archival/F
 
 ### 1. Researcher Access (Login)
 *Secure entry point featuring the "Archival Log" aesthetic and custom input fields.*
-<img src="./screenshots/login.png" width="800" alt="Login Screen">
+<img src="./screenshots/login.png" width="600" alt="Login Screen">
 
 <br>
 
 ### 2. The Archive Dashboard
 *The central command center. Features a custom sidebar, brutalist card grid, and real-time search filtering.*
-<img src="./screenshots/dashboard.png" width="800" alt="Dashboard Interface">
+<img src="./screenshots/dashboard.png" width="600" alt="Dashboard Interface">
 
 <br>
 
 ### 3. Data Entry Log (Modal)
 *A "File Folder" overlay for creating notes without leaving the context of the dashboard.*
-<img src="./screenshots/modal.png" width="800" alt="Create Note Modal">
+<img src="./screenshots/modal.png" width="600" alt="Create Note Modal">
 
 <br>
 
 ### 4. Personnel Record (Profile)
 *User management screen allowing researchers to update their bio and select visual identification stamps.*
-<img src="./screenshots/profile.png" width="800" alt="User Profile Page">
+<img src="./screenshots/profile.png" width="600" alt="User Profile Page">
 
 ---
 ## 🛠 Tech Stack
