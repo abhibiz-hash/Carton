@@ -6,7 +6,7 @@ import prisma from './prisma';
 
 //route imports
 import authRoutes from './routes/authRoutes';
-
+import noteRoutes from './routes/noteRoutes';
 
 dotenv.config();
 
@@ -17,8 +17,8 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-// Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/notes', noteRoutes);
 
 app.get('/health', (req: Request, res: Response) => {
     res.json({ status: 'ok', message: '📦 Carton Backend is alive' })
