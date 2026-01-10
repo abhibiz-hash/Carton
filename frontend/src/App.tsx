@@ -2,19 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import type { ReactNode } from 'react';
-
-// A generic Dashboard placeholder (We will build the real one next)
-const Dashboard = () => {
-  const { user, logout } = useAuth();
-  return (
-    <div className="min-h-screen bg-archival-paper p-8">
-      <h1 className="text-2xl font-mono">Welcome, {user?.name}</h1>
-      <button onClick={logout} className="mt-4 text-archival-red underline cursor-pointer">
-        Logout
-      </button>
-    </div>
-  );
-};
+import Dashboard from './pages/Dashboard';
 
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
