@@ -1,30 +1,52 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import Login from './pages/Login';
+import type { ReactNode } from 'react';
+
+// A generic Dashboard placeholder (We will build the real one next)
+const Dashboard = () => {
+  const { user, logout } = useAuth();
+  return (
+    <div className="min-h-screen bg-archival-paper p-8">
+      <h1 className="text-2xl font-mono">Welcome, {user?.name}</h1>
+      <button onClick={logout} className="mt-4 text-archival-red underline cursor-pointer">
+        Logout
+      </button>
+    </div>
+  );
+};
+
+
+const ProtectedRoute = ({ children }: { children: ReactNode }) => {
+  const { isAuthenticated, isLoading } = useAuth();
+
+  if (isLoading) {
+    return <div className="min-h-screen bg-archival-paper flex items-center justify-center font-mono">LOADING SYSTEM...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
+
+  return children;
+};
+
 function App() {
   return (
-    <div className="min-h-screen bg-archival-paper text-archival-ink flex items-center justify-center p-4">
-      <div className="bg-archival-card p-8 border border-archival-border shadow-sm max-w-md w-full">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-3 h-3 bg-archival-accent rounded-full"></div>
-          <h1 className="text-2xl font-mono font-bold tracking-tight">CARTON.</h1>
-        </div>
-        
-        <p className="font-sans text-archival-ink mb-6 leading-relaxed">
-          System initialized. v4 CSS engine active.
-        </p>
-        
-        <div className="flex flex-col gap-3">
-          <button className="w-full py-3 bg-archival-accent text-white font-mono text-sm uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer">
-            Enter System
-          </button>
-          <button className="w-full py-3 border border-archival-ink text-archival-ink font-mono text-sm uppercase tracking-wider hover:bg-archival-border/20 transition-colors cursor-pointer">
-            Read Documentation
-          </button>
-        </div>
-        
-        <div className="mt-8 pt-4 border-t border-archival-border text-xs font-mono text-archival-muted text-center">
-          V.1.0 // AUTHORIZED PERSONNEL ONLY
-        </div>
-      </div>
-    </div>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes */}
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
