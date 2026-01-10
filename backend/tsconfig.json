@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
-    /* Language and Environment */
-    "target": "es2016",
-    "module": "commonjs",             /* Node.js uses CommonJS by default */
-    "esModuleInterop": true,          /* Fixes compatibility for imports like 'express' */
+    "target": "ES2020",
+    "module": "CommonJS",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,             /* Skips checking types in node_modules (saves time) */
+    "skipLibCheck": true,
 
-    /* Project Structure */
     "rootDir": "./src",
     "outDir": "./dist",
-    
-    /* The Fix: Ensure this is explicitly FALSE or removed */
-    "verbatimModuleSyntax": false
+
+    "moduleResolution": "node",
+    "types": ["node"]
   }
 }

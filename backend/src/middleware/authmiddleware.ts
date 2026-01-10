@@ -1,14 +1,17 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-const SECRET = process.env.JWT_SECRET as string;
+if (!process.env.JWT_SECRET) {
+    throw new Error("JWT_SECRET is not defined");
+}
+const SECRET = process.env.JWT_SECRET;
 
 export interface AuthRequest extends Request {
     userId?: string;
 }
 
 export const authenticateToken = (req: AuthRequest, res: Response, next: NextFunction): void => {
-    const authHeader = req.headers['authorization'];
+    const authHeader = req.header('authorization');
     const token = authHeader && authHeader.split(' ')[1];
 
     if (!token) {
