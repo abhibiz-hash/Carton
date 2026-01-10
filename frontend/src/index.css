@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* Option B: The Archival Log Palette */
+  --color-archival-paper: #F0EBE3;   /* Main background */
+  --color-archival-card: #E6DED5;    /* Cards/Sidebar */
+  --color-archival-ink: #2C2C2C;     /* Text */
+  --color-archival-accent: #2F4F4F;  /* Primary Buttons */
+  --color-archival-muted: #8C8C8C;   /* Secondary text */
+  --color-archival-border: #D1C7BC;  /* Borders */
+  --color-archival-red: #A63B3B;     /* Error state */
+
+  /* Typography */
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
