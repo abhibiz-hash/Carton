@@ -13,12 +13,22 @@ import userRoutes from "./routes/userRoutes";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+];
+
 app.use(
   cors({
-    origin: process.env.NODE_ENV === "production"
-      ? process.env.FRONTEND_URL || "*"
-      : "*",
-    credentials: true
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
   })
 );
 
