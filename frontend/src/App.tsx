@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import type { ReactNode } from 'react';
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
@@ -30,6 +31,11 @@ function App() {
           <Route path="/" element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           } />
         </Routes>
