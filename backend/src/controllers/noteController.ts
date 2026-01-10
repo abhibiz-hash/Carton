@@ -25,6 +25,7 @@ export const getNotes = async (req: AuthRequest, res: Response): Promise<void> =
             whereClause.OR = [
                 { title: { contains: String(search), mode: 'insensitive' } },
                 { content: { contains: String(search), mode: 'insensitive' } },
+                { category: { contains: String(search), mode: 'insensitive' } },
             ];
         }
 
