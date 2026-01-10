@@ -59,7 +59,7 @@ npx prisma migrate dev --name init
 
 # Run Server
 npm run dev
-
+```
 ### 2. Frontend Setup
 
 ```bash
@@ -68,3 +68,4 @@ npm install
 
 # Run Server
 npm run dev
+```
