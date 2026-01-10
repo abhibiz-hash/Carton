@@ -7,7 +7,7 @@
 
 ### 🚀 [Launch Live Application](https://carton-three.vercel.app)
 
-**Frontend:** Vercel &nbsp;|&nbsp; **Backend:** Render &nbsp;|&nbsp; **Database:** Neon/Render
+**Frontend:** Vercel &nbsp;|&nbsp; **Backend:** Render &nbsp;|&nbsp; **Database:** Supabase
 
 </div>
 
