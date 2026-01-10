@@ -3,6 +3,16 @@
 > An archival journal system for the modern researcher.
 > Built with strict TypeScript, Node.js, and a custom Tailwind v4 design system.
 
+<div align="center">
+
+### 🚀 [Launch Live Application](https://carton-chi.vercel.app/)
+
+**Frontend:** Vercel &nbsp;|&nbsp; **Backend:** Render &nbsp;|&nbsp; **Database:** Neon/Render
+
+</div>
+
+---
+
 ![Project Status](https://img.shields.io/badge/status-production--ready-2F4F4F?style=for-the-badge)
 ![Tech Stack](https://img.shields.io/badge/stack-PERN-E6DED5?style=for-the-badge&labelColor=2C2C2C)
 
@@ -43,6 +53,7 @@ Carton is a full-stack journaling application designed with a unique "Archival/F
 <img src="./screenshots/profile.png" width="600" alt="User Profile Page">
 
 ---
+
 ## 🛠 Tech Stack
 
 **Frontend:**
@@ -85,6 +96,7 @@ npx prisma migrate dev --name init
 # Run Server
 npm run dev
 ```
+
 ### 2. Frontend Setup
 
 ```bash
